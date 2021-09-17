@@ -1,0 +1,214 @@
+<!doctype html>
+<html amp lang="en">
+  
+<!-- Mirrored from www.virid.com/blog/general/meltdown-and-spectre-what-you-need-to-know?hs_amp=true by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 07 Sep 2021 15:53:17 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+    <meta charset="utf-8">
+    <title>Meltdown and Spectre - What you need to know</title>
+    <link rel="canonical" href="meltdown-and-spectre-what-you-need-to-know.html" />
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+
+    <meta name="author" content="Lauren Shanta">
+
+    <meta name="description" content="Meltdown and Spectre - What you need to know">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+    <meta name="generator" content="HubSpot">
+    <script type="application/ld+json">
+      {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Meltdown and Spectre - What you need to know",
+        "datePublished": "2018-01-04T20:59:23Z",
+        "dateModified": "2019-12-11T14:56:24.919Z",
+        "mainEntityOfPage": "https://www.virid.com/blog/general/meltdown-and-spectre-what-you-need-to-know",
+        "author": {
+          "@type": "Person",
+          "name": "Lauren Shanta"
+        },
+        "image": {
+         "@type": "ImageObject",
+        
+          
+          "width": 734,
+          
+          
+          "height": 435,
+          
+          "url": "https://cdn2.hubspot.net/hubfs/5757505/Meltdown%20and%20Spectre%20%E2%80%93%20What%20you%20need%20to%20know.png"
+        
+        },
+        "publisher" : {
+          "@type": "Organization",
+          "logo": {
+            "@type": "ImageObject",
+            
+            "url": "https://cdn2.hubspot.net/hubfs/5757505/Virid_NameLogo-1.png",
+            "width": 229.77274,
+            "height": 60.0
+            
+          },
+          "name": "Blog - Virid: People-Powered eCommerce"
+        }
+      }
+    </script>
+    <script async custom-element="amp-analytics" src="../../../cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style>
+    <noscript>
+      <style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style>
+    </noscript>
+  <style amp-custom>
+      body {
+        color: #404040;
+        font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        font-size: 16px;
+        line-height: 1.6;
+      }
+
+      .hs-page-width-normal {
+        box-sizing: content-box;
+        margin: 0 auto;
+        padding: 0 5vw 5vw;
+      }
+
+      .info {
+        font-size: 14px
+      }
+
+      h1 {
+        color: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        font-size: 26px;
+        line-height: 1.5;
+        font-weight: 600;
+      }
+
+      h1 a {
+        color: #404040;
+      }
+
+      h2 {
+        color: #404040;
+        font-size: 22px;
+        line-height: 38px;
+      }
+
+      a {
+        color: #7c923a;
+        text-decoration: none;
+      }
+
+      .logo-header-text {
+        color: #1e1e1e;
+        font-size: 30px;
+        font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        line-height: 2.0;
+        font-weight: bold;
+        vertical-align: text-bottom;
+      }
+
+      .hs-page-width-normal {
+        padding: 5vw;
+      }
+
+      .iframe-placeholder {
+        background-color: #bbb;
+      }
+
+      .header-banner {
+        padding: 3vw 1vw;
+        border-color: #dcdcdc;
+        border-bottom-style: solid;
+        border-bottom-width: thin;
+        background-color: #ffffff;
+        color: #1e1e1e;
+        text-align: center;
+      }
+
+      .full-link {
+        text-align: center;
+      }
+
+      .full-link a {
+        border: 1px solid #dcdcdc;
+        background-color: transparent;
+        color: #7c923a;
+        cursor: pointer;
+        display: block;
+        font-size: 14px;
+        line-height: 18px;
+        margin: 0 auto;
+        max-width: 200px;
+        padding: 11px 16px;
+        text-decoration: none;
+        width: 50%;
+      }
+
+    </style></noscript>
+    <script async src="../../../cdn.ampproject.org/v0.js"></script>
+  </head>
+  <body>
+    <div class="row-fluid">
+      <div class="header-banner">
+        <a class="blog-link" href="../../blog.html">
+        
+          <span class="logo">
+            <amp-img src="../../../cdn2.hubspot.net/hubfs/5757505/Virid_NameLogo-1.png" height="60.0" width="229.77274" alt="Virid"></amp-img>
+          </span>
+        
+          <span class="logo-header-text">Blog - Virid: People-Powered eCommerce</span>
+         </a>
+      </div>  
+      <div class="hs-page-width-normal">
+        <div class="post-header">
+          <h1><a href="meltdown-and-spectre-what-you-need-to-know.html">Meltdown and Spectre - What you need to know</a></h1>
+        </div>
+        <div class="info">
+          <span> Written by <a class="author-link" href="../author/lauren-shanta.html">Lauren Shanta</a> | January 4, 2018 </span>
+        </div>
+        <div class="blog-section">
+          <span><p>By now you have likely seen one of many news reports about security vulnerabilities in computer chips like Intel, AMD, and others. We at Virid created this quick FAQ to help you make sense of the reports.</p> 
+<h3 id="MeltdownandSpectre-Whatyouneedtoknow-WhatisthisMeltdown/Spectreissueanyway?">What is this Meltdown/Spectre issue anyway?</h3> 
+<p>Security researchers have discovered that it's technically possible to trick certain computer chips into leaking whatever is in their memory to processes that don't have direct permission to access that information. The exploit takes advantage of a common feature of high-performance computer chips, which is why it's so widespread. The 'Meltdown' exploit applies mostly to Intel chips, but 'Spectre' spans many chip manufacturers.</p> 
+<h3 id="MeltdownandSpectre-Whatyouneedtoknow-I'mhearingthatthisiseverywhereandisareallybigdeal-howworriedshouldIbe?">I'm hearing that this is everywhere and is a really big deal - how worried should I be?</h3> 
+<p>It's a big deal because it's the biggest and most widespread chip security vulnerability that has been found in recent memory (or perhaps ever). It's staggering in scope and, if used, could potentially expose even passwords and other secure information. That said, this is only a vulnerability—a theoretical weakness that was discovered by researchers.</p> 
+<p>There has been no evidence or reason to believe that anyone malicious found or used this weakness to access any information. The vulnerability that was discovered is very difficult to pull off and the raw memory dump that it yields isn't easy to get any value from. In short: for your average computer ne'er-do-well, this exploit is way more trouble than it's worth.</p> 
+<p>Should you immediately patch every chip-using device you have? Most certainly. You should do that anyway. Should you lose sleep over your mom's desktop being hacked via Meltdown or Spectre? Based on the information out as of now—no, I really wouldn't.</p> 
+<h3 id="MeltdownandSpectre-Whatyouneedtoknow-IsmymarketAgilityecommercesiteatrisk?">Is my marketAgility ecommerce site at risk?</h3> 
+<p>In a word, no. Virid hosts all our clients sites on Microsoft's Azure platform. As soon as we heard of the issue we reached out through our Microsoft partner channels to get details on the mitigation plans. The security patches were already in progress across the infrastructure, and you may have even noticed the required site restart late yesterday. As of last night, the Azure services that we use to host your sites have been patched against this potential security risk.</p> 
+<p>We will continue to work closely with our partner, Microsoft, on any Meltdown or Spectre related security updates—as we do for all security issues. If any additional mitigation actions surface, rest assured we will address them immediately. As a PCI level 1 certified company, security is part of our DNA and we take it very seriously.</p> 
+<p>If you're not a Virid client, you should speak to your hosting company immediately to make sure they're installing the required security patches ASAP and will continue to monitor this vulnerability on your behalf.</p> 
+<h3 id="MeltdownandSpectre-Whatyouneedtoknow-Ismypersonal/workcomputeratrisk?">Is my personal/work computer at risk?</h3> 
+<p>Potentially. You should make sure that you have the latest version of the operating system on your computer. Most devices have a simple "check for system updates" function, which you can use on-demand to check that your device is up to date.</p> 
+<p>It's also best practice to set your system software to "update automatically" so whenever a new security patch comes out, your computer will install it as soon as it's available. For any work computers, you should talk to your internal IT team to ensure you're following corporate policies on system updates.</p> 
+<h3 id="MeltdownandSpectre-Whatyouneedtoknow-MoreInformation">More Information</h3> 
+<p><a href="https://www.cnet.com/uk/news/spectre-meltdown-intel-arm-amd-processor-cpu-chip-flaw-vulnerability-faq/" rel="nofollow">https://www.cnet.com/uk/news/spectre-meltdown-intel-arm-amd-processor-cpu-chip-flaw-vulnerability-faq/</a></p> 
+<p><a href="https://www.washingtonpost.com/news/the-switch/wp/2018/01/04/tech-companies-work-to-patch-major-computer-vulnerabilities-meltdown-and-spectre/?utm_term=.8ee032585f14" rel="nofollow">https://www.washingtonpost.com/news/the-switch/wp/2018/01/04/tech-companies-work-to-patch-major-computer-vulnerabilities-meltdown-and-spectre/</a></p> 
+<p><a href="https://www.anandtech.com/show/12214/understanding-meltdown-and-spectre" rel="nofollow">https://www.anandtech.com/show/12214/understanding-meltdown-and-spectre</a></p> 
+<p><a href="https://azure.microsoft.com/en-us/blog/securing-azure-customers-from-cpu-vulnerability/" rel="nofollow">https://azure.microsoft.com/en-us/blog/securing-azure-customers-from-cpu-vulnerability/</a></p><amp-analytics type="googleanalytics"><script type="application/json">{
+  "vars": {
+    "account": "UA-8971406-2"
+  },
+  "triggers": {
+    "trackPageview": {
+      "on": "visible",
+      "request": "pageview"
+    }
+  }
+}
+</script></amp-analytics></span>
+        </div>
+        <div class="full-link">
+          <a href="meltdown-and-spectre-what-you-need-to-know.html">View full post</a>
+        </div>
+      </div>
+    </div>
+    
+    <amp-pixel src="../../../track.hubspot.com/__ptq684b.gif?cd=SCREEN_COLOR_DEPTH-bit&amp;cs=DOCUMENT_CHARSET&amp;ln=BROWSER_LANGUAGE&amp;sd=AVAILABLE_SCREEN_WIDTHxAVAILABLE_SCREEN_HEIGHT&amp;v=1.1&amp;iaa=1&amp;k=1&amp;ccu=CANONICAL_URL&amp;r=DOCUMENT_REFERRER&amp;ct=blog-post&amp;t=Meltdown+and+Spectre+-+What+you+need+to+know&amp;pi=19390014867&amp;a=5757505&amp;nc=true&amp;cgi=9140957098&amp;vi=CLIENT_ID(hubspotutk)&amp;ai=CLIENT_ID(amputk)">
+    </amp-pixel>
+    
+  </body>
+
+<!-- Mirrored from www.virid.com/blog/general/meltdown-and-spectre-what-you-need-to-know?hs_amp=true by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 07 Sep 2021 15:53:17 GMT -->
+</html>

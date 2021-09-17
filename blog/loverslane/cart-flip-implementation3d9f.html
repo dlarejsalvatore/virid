@@ -1,0 +1,225 @@
+<!doctype html>
+<html amp lang="en">
+  
+<!-- Mirrored from www.virid.com/blog/loverslane/cart-flip-implementation?hs_amp=true by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 07 Sep 2021 15:40:24 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+    <meta charset="utf-8">
+    <title>Implementing Cart Updates for Promotions on Lover’s Lane</title>
+    <link rel="canonical" href="cart-flip-implementation.html" />
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+
+    <meta name="author" content="Brian Young">
+
+    <meta name="description" content="By creating a cart experience that is easy to use on the back end, Virid helps Lover&#39;s Lane offer quick solutions to their website maintenance.">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+    <meta name="generator" content="HubSpot">
+    <script type="application/ld+json">
+      {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Implementing Cart Updates for Promotions on Lover\u2019s Lane",
+        "datePublished": "2021-05-20T17:28:36.272Z",
+        "dateModified": "2021-05-20T17:28:36.277Z",
+        "mainEntityOfPage": "https://www.virid.com/blog/loverslane/cart-flip-implementation",
+        "author": {
+          "@type": "Person",
+          "name": "Brian Young"
+        },
+        "image": {
+         "@type": "ImageObject",
+        
+          
+          "width": 725,
+          
+          
+          "height": 429,
+          
+          "url": "https://f.hubspotusercontent00.net/hubfs/5757505/Case%20study%20computer%20previews%20%281%29.png"
+        
+        },
+        "publisher" : {
+          "@type": "Organization",
+          "logo": {
+            "@type": "ImageObject",
+            
+            "url": "https://cdn2.hubspot.net/hubfs/5757505/Virid_NameLogo-1.png",
+            "width": 229.77274,
+            "height": 60.0
+            
+          },
+          "name": "Blog - Virid: People-Powered eCommerce"
+        }
+      }
+    </script>
+    <script async custom-element="amp-iframe" src="../../../cdn.ampproject.org/v0/amp-iframe-0.1.js"></script><script async custom-element="amp-analytics" src="../../../cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style>
+    <noscript>
+      <style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style>
+    </noscript>
+  <style amp-custom>
+      body {
+        color: #404040;
+        font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        font-size: 16px;
+        line-height: 1.6;
+      }
+
+      .hs-page-width-normal {
+        box-sizing: content-box;
+        margin: 0 auto;
+        padding: 0 5vw 5vw;
+      }
+
+      .info {
+        font-size: 14px
+      }
+
+      h1 {
+        color: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        font-size: 26px;
+        line-height: 1.5;
+        font-weight: 600;
+      }
+
+      h1 a {
+        color: #404040;
+      }
+
+      h2 {
+        color: #404040;
+        font-size: 22px;
+        line-height: 38px;
+      }
+
+      a {
+        color: #7c923a;
+        text-decoration: none;
+      }
+
+      .logo-header-text {
+        color: #1e1e1e;
+        font-size: 30px;
+        font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        line-height: 2.0;
+        font-weight: bold;
+        vertical-align: text-bottom;
+      }
+
+      .hs-page-width-normal {
+        padding: 5vw;
+      }
+
+      .iframe-placeholder {
+        background-color: #bbb;
+      }
+
+      .header-banner {
+        padding: 3vw 1vw;
+        border-color: #dcdcdc;
+        border-bottom-style: solid;
+        border-bottom-width: thin;
+        background-color: #ffffff;
+        color: #1e1e1e;
+        text-align: center;
+      }
+
+      .full-link {
+        text-align: center;
+      }
+
+      .full-link a {
+        border: 1px solid #dcdcdc;
+        background-color: transparent;
+        color: #7c923a;
+        cursor: pointer;
+        display: block;
+        font-size: 14px;
+        line-height: 18px;
+        margin: 0 auto;
+        max-width: 200px;
+        padding: 11px 16px;
+        text-decoration: none;
+        width: 50%;
+      }
+
+    </style></noscript>
+    <script async src="../../../cdn.ampproject.org/v0.js"></script>
+  </head>
+  <body>
+    <div class="row-fluid">
+      <div class="header-banner">
+        <a class="blog-link" href="../../blog.html">
+        
+          <span class="logo">
+            <amp-img src="../../../cdn2.hubspot.net/hubfs/5757505/Virid_NameLogo-1.png" height="60.0" width="229.77274" alt="Virid"></amp-img>
+          </span>
+        
+          <span class="logo-header-text">Blog - Virid: People-Powered eCommerce</span>
+         </a>
+      </div>  
+      <div class="hs-page-width-normal">
+        <div class="post-header">
+          <h1><a href="cart-flip-implementation.html">Implementing Cart Updates for Promotions on Lover’s Lane</a></h1>
+        </div>
+        <div class="info">
+          <span> Written by <a class="author-link" href="../author/brian-young.html">Brian Young</a> | May 20, 2021 </span>
+        </div>
+        <div class="blog-section">
+          <span><p><span>By creating a cart experience that is easy to use on the back end and understandable for customers, Virid helps Lover's Lane offer quick solutions to their website maintenance. Virid values continuous improvement for our client website's in order to create the best user experience and optimize for their team's use.&nbsp;</span></p>
+<span></span>
+<p><amp-img src="../../hs-fs/hubfs/Case%20study%20computer%20previews%20(1)cc53.png?width=411&amp;name=Case%20study%20computer%20previews%20(1).png" alt="Case study computer previews (1)" width="411.0" srcset="https://www.virid.com/hs-fs/hubfs/Case%20study%20computer%20previews%20(1).png?width=206&amp;name=Case%20study%20computer%20previews%20(1).png 206w, https://www.virid.com/hs-fs/hubfs/Case%20study%20computer%20previews%20(1).png?width=411&amp;name=Case%20study%20computer%20previews%20(1).png 411w, https://www.virid.com/hs-fs/hubfs/Case%20study%20computer%20previews%20(1).png?width=617&amp;name=Case%20study%20computer%20previews%20(1).png 617w, https://www.virid.com/hs-fs/hubfs/Case%20study%20computer%20previews%20(1).png?width=822&amp;name=Case%20study%20computer%20previews%20(1).png 822w, https://www.virid.com/hs-fs/hubfs/Case%20study%20computer%20previews%20(1).png?width=1028&amp;name=Case%20study%20computer%20previews%20(1).png 1028w, https://www.virid.com/hs-fs/hubfs/Case%20study%20computer%20previews%20(1).png?width=1233&amp;name=Case%20study%20computer%20previews%20(1).png 1233w" height="243.19862" layout="responsive"></amp-img><span></span></p>
+<h2><span>The Opportunity</span></h2>
+<p><span>To provide the best service to their online customers, <a href="https://www.loverslane.com/" rel="noopener" target="_blank">LoversLane.com</a> periodically offers percentage discount promotions on certain items. Traditionally, items in the cart have been listed in order of the lowest cost item at the top of the list where the discount would be applied. To correctly apply the promotion, Lover's Lane wanted to order the products with the highest dollar value first to ensure customers receive a better overall value. However, changing the order of the cart items always entailed entering a ticket with the Virid help desk who would perform the task. And since the timing of the promotion, and the supporting “cart-flip”, was crucial to promotion success, the Virid team would go into hot-fix-release mode to ensure on-time delivery of the change.</span></p>
+<h2><br>The Result<span></span></h2>
+<p><span>Virid’s Client Services team, in concert with Virid’s Engineering team, suggested that creating a self-service solution that would be easy for the Lover’s Lane eCommerce team to apply whenever needed could be provided through a small, cost-efficient development effort. The result, a self-service, a cart-flip switch was incorporated into the LoversLane.com administrative tool that gives them the ability to flip the order of the cart items on-demand and has the added benefit of eliminating the cost of regular service tickets. In addition, this feature makes the Lover’s Lane eCommerce team more efficient by putting control of cart pricing customization needs directly in their hands.</span></p>
+<h2><span> </span><br>Who is Lover's Lane</h2>
+<p><span>At Lover’s Lane, properly educating their customers on the benefits of sexual health and wellness is paramount. The belief that “Knowledge is Sexy” has created trusted relationships with customers selling associated sexual health and wellness products. For over 30 years that has translated to their growth to approximately 30 retail locations across the Midwest along with their ecommerce sites, LoversLane.com and SexDrive.com.&nbsp;</span></p>
+<p><amp-iframe width="300" height="100" layout="responsive" resizable sandbox="allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox allow-top-navigation allow-forms" src="https://amp.hubspot.net/_hcms/cta?portalId=5757505&amp;ctaGuid=bb2f750d-7899-44dd-bea7-e84070520c4d&amp;analyticsPageId=47554268930&amp;contentType=blog-post&amp;referrerUrl=https://www.virid.com/blog/loverslane/cart-flip-implementation?hs_amp%3Dtrue">
+  <amp-img layout="fixed" height="25" width="25" class="iframe-placeholder" src="../../hs/hsstatic/content_shared_assets/static-1.4092/img/iframe-expand.png" placeholder overflow></amp-img>
+</amp-iframe></p>
+<p><span>Virid has helped Lover's Lane implement BOPIS services and increase their revenue even during the shutdown of their physical stores.&nbsp;</span></p>
+<p>&nbsp;</p>
+<h2>Virid's Expertise</h2>
+<p><span>Virid is here to help brands and retailers understand the gaps in their ecommerce site and how to best solve them. Whether their site needs a rebuild, platform migration, design changes, custom development, or optimizations, we have a wealth of expertise in all aspects. <span>We understand that your web presence is just as significant, if not more, than your physical storefront. We focus on customized solutions for developed ecommerce retailers.</span> </span><br><br><span>Our specialty is a holistic approach to web design and implementation. We are here to partner with your efforts to better serve your customers and create a superior shopping experience.</span></p>
+<div>&nbsp;</div>
+<div>
+<div>
+<p><span>Let us know how we can help you improve your website experience!</span></p>
+<amp-iframe width="300" height="100" layout="responsive" resizable sandbox="allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox allow-top-navigation allow-forms" src="https://amp.hubspot.net/_hcms/cta?portalId=5757505&amp;ctaGuid=4f5609aa-42e4-4312-92e0-a06761c94140&amp;analyticsPageId=47554268930&amp;contentType=blog-post&amp;referrerUrl=https://www.virid.com/blog/loverslane/cart-flip-implementation?hs_amp%3Dtrue">
+  <amp-img layout="fixed" height="25" width="25" class="iframe-placeholder" src="../../hs/hsstatic/content_shared_assets/static-1.4092/img/iframe-expand.png" placeholder overflow></amp-img>
+</amp-iframe>
+<span>For more content like this, subscribe to the&nbsp;</span><a href="../../newsletter-sign-up.html" rel="nofollow noopener">Virid newsletter</a><span>. And be sure to follow us on</span><a href="https://twitter.com/teamvirid" rel="nofollow"> Twitter</a><span>,&nbsp;</span><a href="https://www.linkedin.com/company/virid/" rel="nofollow">LinkedIn</a><span>,&nbsp;</span><a href="https://www.facebook.com/ViridRetailSolutions/" rel="nofollow">Facebook</a><span>, and&nbsp;</span><a href="https://www.instagram.com/teamvirid/" rel="nofollow">Instagram</a><span>!</span>
+
+
+
+<small>Icons made by <a title="Smashicons" href="https://www.flaticon.com/authors/smashicons">Smashicons</a> from <a title="Flaticon" href="https://www.flaticon.com/">www.flaticon.com</a> is licensed by <a title="Creative Commons BY 3.0" href="http://creativecommons.org/licenses/by/3.0/" target="_blank" rel="noopener noreferrer">CC 3.0 BY</a></small>
+</div>
+</div><amp-analytics type="googleanalytics"><script type="application/json">{
+  "vars": {
+    "account": "UA-8971406-2"
+  },
+  "triggers": {
+    "trackPageview": {
+      "on": "visible",
+      "request": "pageview"
+    }
+  }
+}
+</script></amp-analytics></span>
+        </div>
+        <div class="full-link">
+          <a href="cart-flip-implementation.html">View full post</a>
+        </div>
+      </div>
+    </div>
+    
+    <amp-pixel src="../../../track.hubspot.com/__ptq9c75.gif?cd=SCREEN_COLOR_DEPTH-bit&amp;cs=DOCUMENT_CHARSET&amp;ln=BROWSER_LANGUAGE&amp;sd=AVAILABLE_SCREEN_WIDTHxAVAILABLE_SCREEN_HEIGHT&amp;v=1.1&amp;iaa=1&amp;k=1&amp;ccu=CANONICAL_URL&amp;r=DOCUMENT_REFERRER&amp;ct=blog-post&amp;t=Implementing+Cart+Updates+for+Promotions+on+Lover%E2%80%99s+Lane&amp;pi=47554268930&amp;a=5757505&amp;nc=true&amp;cgi=9140957098&amp;vi=CLIENT_ID(hubspotutk)&amp;ai=CLIENT_ID(amputk)">
+    </amp-pixel>
+    
+  </body>
+
+<!-- Mirrored from www.virid.com/blog/loverslane/cart-flip-implementation?hs_amp=true by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 07 Sep 2021 15:40:24 GMT -->
+</html>
