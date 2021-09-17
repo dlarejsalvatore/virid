@@ -189,23 +189,6 @@
                                     <!--end row-wrapper -->
                                 </div>
                                 <!--end widget-span -->
-                                <div class="span4 widget-span widget-type-cell sidebar right" style="" data-widget-type="cell" data-x="8" data-w="4">
-                                    <div class="row-fluid-wrapper row-depth-1 row-number-5 ">
-                                        <div class="row-fluid ">
-                                            <div class="span12 widget-span widget-type-custom_widget sidebar-form" style="" data-widget-type="custom_widget" data-x="0" data-w="12">
-                                                <div id="hs_cos_wrapper_module_15181167892951790" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module widget-type-form" style="" data-hs-cos-general-type="widget" data-hs-cos-type="module">
-                                                    <span id="hs_cos_wrapper_module_15181167892951790_" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_form" style="" data-hs-cos-general-type="widget" data-hs-cos-type="form">
-                                                        <div id="hs_form_target_module_15181167892951790"></div>
-                                                    </span>
-                                                </div>
-                                            </div>
-                                            <!--end widget-span -->
-                                        </div>
-                                        <!--end row-->
-                                    </div>
-                                    <!--end row-wrapper -->
-                                </div>
-                                <!--end widget-span -->
                             </div>
                             <!--end row-->
                         </div>
@@ -226,41 +209,7 @@
         <!--end footer -->
     </div>
     <!--end footer wrapper -->
-    <script>
-        (function () {
-            window.addEventListener('load', function () {
-                setTimeout(function () {
-                    var xhr = new XMLHttpRequest();
-                    xhr.open('POST.html', '/_hcms/perf', true /*async*/);
-                    xhr.setRequestHeader("Content-type", "application/json");
-                    xhr.onreadystatechange = function () {
-                        // do nothing.
-                    };
-                    var connection = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
-                    function populateNetworkInfo(name, connection, info) {
-                        if (name in connection) {
-                            info[name] = connection[name];
-                        }
-                    }
-                    var networkInfo = {};
-                    if (connection) {
-                        ['type', 'effectiveType', 'downlink', 'rtt'].forEach(function(name) {
-                            populateNetworkInfo(name, connection, networkInfo);
-                        });
-                    }
-                    var perfData = {
-                        url: location.href,
-                        portal: 5757505,
-                        content: 21897641988,
-                        group: -1,
-                        connection: networkInfo,
-                        timing: performance.timing
-                    };
-                    xhr.send(JSON.stringify(perfData));
-                }, 3000);  // Execute this 3 seconds after onload.
-            });
-        })();
-    </script>
+    
     <script src="hs-fs/hub/5757505/hub_generated/template_assets/9140311540/1606933883369/Marketplace/Vast_Site_Setup/Coded_Files/vast-main.js"></script>
     <script>
         if (typeof hsVars !== 'undefined') { hsVars['language'] = 'en'; }
@@ -270,74 +219,5 @@
     <!--[if lte IE 8]>
     <script charset="utf-8" src="https://js.hsforms.net/forms/v2-legacy.js"></script>
     <![endif]-->
-    <script src="_hcms/forms/v2.js"></script>
-    <script>
-        var options = {
-            portalId: '5757505',
-            formId: '54cb04fa-91a5-429a-846e-b5f21177f4e9',
-            formInstanceId: '7762',
-            pageId: '21897641988',
-            region: 'na1',
-            
-            
-            
-            
-            pageName: "Contact Virid",
-            
-            
-            
-            inlineMessage: "<p>Thanks for your message!&nbsp;</p>",
-            
-            
-            rawInlineMessage: "<p>Thanks for your message!&nbsp;</p>",
-            
-            
-            hsFormKey: "755c71dbca28c6cfd71c046d05adf337",
-            
-            
-            css: '',
-            target: '#hs_form_target_module_15181167892951790',
-            
-            
-            
-            
-            
-            contentType: "standard-page",
-            
-            
-            formsBaseUrl: '/_hcms/forms/',
-            
-            
-            formData: {
-                cssClass: 'hs-form stacked hs-custom-form'
-            }
-        };
-        
-        options.getExtraMetaDataBeforeSubmit = function() {
-            var metadata = {};
-            
-        
-            if (hbspt.targetedContentMetadata) {
-                var count = hbspt.targetedContentMetadata.length;
-                var targetedContentData = [];
-                for (var i = 0; i < count; i++) {
-                    var tc = hbspt.targetedContentMetadata[i];
-                     if ( tc.length !== 3) {
-                        continue;
-                     }
-                     targetedContentData.push({
-                        definitionId: tc[0],
-                        criterionId: tc[1],
-                        smartTypeId: tc[2]
-                     });
-                }
-                metadata["targetedContentMetadata"] = JSON.stringify(targetedContentData);
-            }
-        
-            return metadata;
-        };
-        
-        hbspt.forms.create(options);
-    </script>
 </body>
 </html>
